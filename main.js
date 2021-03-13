@@ -7,9 +7,11 @@ window.OneSignal = window.OneSignal || [];
       },
     });
   });
-OneSignal.push(["addListenerForNotificationOpened", function(event) {   
-  ThunkableWebviewerExtension.postMessage("hola");
-}]);       
+OneSignal.push(function() {
+  OneSignal.on('notificationDisplay', function(event) {
+    console.log("hola");
+  });
+});    
 function send()
 {                                                                                          
               web_buttons=[
