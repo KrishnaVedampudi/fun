@@ -7,10 +7,8 @@ window.OneSignal = window.OneSignal || [];
       },
     });
   });
-  ThunkableWebviewerExtension.receiveMessage(function(message)
-    {                                
-       console.log(message);
-       fetch('https://onesignal.com/api/v1/apps/0727e2e0-25b1-456a-9e64-034a935c0878/outcomes?outcome_names=os__click.count', {
+OneSignal.push(["addListenerForNotificationOpened", function(event) {   
+  fetch('https://onesignal.com/api/v1/apps/0727e2e0-25b1-456a-9e64-034a935c0878/outcomes?outcome_names=os__click.count', {
         method: 'POST',       
          headers: {               
            "Content-type": "application/json; charset=utf-8",
@@ -20,7 +18,7 @@ window.OneSignal = window.OneSignal || [];
      .then(json => {
         console.log(json);
    });
-});
+}]);       
 function send()
 {                                                                                          
               web_buttons=[
