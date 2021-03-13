@@ -53,5 +53,6 @@ function send()
                  }).then(response => response.json())
                   .then(json => {
                      console.log(json);
+                     ThunkableWebviewerExtension.postMessage("hola");
                 });
             }
