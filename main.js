@@ -8,9 +8,8 @@ window.OneSignal = window.OneSignal || [];
     });
   });
 OneSignal.push(function() {
-  OneSignal.on('notificationDisplay', function(event) {
-    console.warn('OneSignal notification displayed:', event);
-    console.log("hola");
+  OneSignal.on('notificationDisplay', function(event) {    
+    ThunkableWebviewerExtension.postMessage('hello world');
   });
 });    
 function send()
