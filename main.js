@@ -1,3 +1,5 @@
+var outcomes = [null];
+var outcome = null;
 window.OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
     OneSignal.init({
@@ -7,11 +9,29 @@ window.OneSignal = window.OneSignal || [];
       },
     });
   });
-OneSignal.push(["addListenerForNotificationOpened", function(data) {
-    console.log("Received NotificationOpened:");
-    console.log(data);
-  ThunkableWebviewerExtension.postMessage('hello world');
-}]);
+function draw()
+{  
+  fetch('https://onesignal.com/api/v1/apps/0727e2e0-25b1-456a-9e64-034a935c0878/outcomes?outcome_names=os__click.count', {
+        method: 'POST',       
+         headers: {               
+           "Content-type": "application/json; charset=utf-8",
+           "Authorization": "Basic NzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4"
+         }
+    }).then(response => response.json())
+     .then(json => {
+        console.log(json);
+        outcome = json;
+   });
+  last_outcome = outcomes.pop;
+  if(last_outcome == outcome.value)
+  {
+    ThunkableWebviewerExtension.postMessage('hola');
+  }
+  else
+  {
+    outcomes.push(outcome.value);
+  } 
+} 
 function send()
 {                                                                                          
               web_buttons=[
