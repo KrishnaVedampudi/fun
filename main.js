@@ -12,11 +12,12 @@ window.OneSignal = window.OneSignal || [];
 function draw()
 {  
   fetch('https://onesignal.com/api/v1/apps/0727e2e0-25b1-456a-9e64-034a935c0878/outcomes?outcome_names=os__click.count/allow-cors', {
-        mode:'cors',
+        mode: 'cors',
+        credentials: 'include',
         method: 'POST',       
          headers: {               
            "Content-type": "application/json; charset=utf-8",
-           "Authorization": "Basic \u003cNzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4\u003e"
+           "Authorization": "Basic cNzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4"
          }
     }).then(response => response.json())
      .then(json => {
