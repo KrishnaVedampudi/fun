@@ -12,8 +12,7 @@ window.OneSignal = window.OneSignal || [];
 function draw()
 {  
   fetch('https://onesignal.com/api/v1/apps/0727e2e0-25b1-456a-9e64-034a935c0878/outcomes?outcome_names=os__click.count/allow-cors', {
-        mode: 'cors',
-        
+        mode: 'cors',        
         method: 'POST',       
          headers: {               
            "Content-type": "application/json; charset=utf-8",
