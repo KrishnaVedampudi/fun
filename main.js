@@ -16,7 +16,7 @@ function isPushNotificationsEnabledVerbose() {
             OneSignal.getRegistrationId(),
             OneSignal.getNotificationPermission(),
             OneSignal.isOptedOut(),
-            OneSignal.context.serviceWorkerManager.getActiveState()
+        
         ])
         .then(([isSubscribed, userId, registrationId, notificationPermission, optedOut, serviceWorkerActive]) => {
             console.log('Is Completely Subscribed:', isSubscribed);
