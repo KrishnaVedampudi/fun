@@ -7,11 +7,11 @@ window.OneSignal = window.OneSignal || [];
       },
     });
   });
-OneSignal.push(function() {
-  OneSignal.on('notificationDisplay', function(event) {    
-    ThunkableWebviewerExtension.postMessage('hello world');
-  });
-});    
+OneSignal.push(["addListenerForNotificationOpened", function(data) {
+    console.log("Received NotificationOpened:");
+    console.log(data);
+  ThunkableWebviewerExtension.postMessage('hello world');
+}]);
 function send()
 {                                                                                          
               web_buttons=[
