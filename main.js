@@ -51,6 +51,5 @@ OneSignal.push(["addListenerForNotificationOpened", function(event) {
     } else if (event.action === 'NO') {
       // The "Read more" action button was clicked
       alert('Showing you the full news article...');
-    }
-  }
+    }  
 }]);
