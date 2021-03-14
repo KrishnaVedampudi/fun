@@ -9,30 +9,6 @@ window.OneSignal = window.OneSignal || [];
       },
     });
   });
-function draw()
-{  
-  fetch('https://onesignal.com/api/v1/apps/0727e2e0-25b1-456a-9e64-034a935c0878/outcomes?outcome_names=os__click.count', {
-        mode: 'no-cors',        
-        method: 'POST',       
-         headers: {               
-           "Content-type": "application/json; charset=utf-8",
-           "Authorization": "Basic cNzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4"
-         }
-    }).then(response => response.json())
-     .then(json => {
-        console.log(json);
-        outcome = json;
-   });
-  last_outcome = outcomes.pop;
-  if(last_outcome == outcome.value)
-  {
-    ThunkableWebviewerExtension.postMessage('hola');
-  }
-  else
-  {
-    outcomes.push(outcome.value);
-  } 
-} 
 function send()
 {                                                                                          
               web_buttons=[
@@ -63,7 +39,6 @@ function send()
                       }
                  }).then(response => response.json())
                   .then(json => {
-                     console.log(json);  
-               draw();
+                     console.log(json);                
                 });
             }
