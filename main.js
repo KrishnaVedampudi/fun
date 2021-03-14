@@ -42,3 +42,15 @@ function send()
                      console.log(json);                
                 });
             }
+OneSignal.push(["addListenerForNotificationOpened", function(event) {
+  console.log("OneSignal notification clicked:", event);
+  if (event.action === "") {
+      console.log('body is clicked')
+    } else if (event.action === 'YES') {      
+      console.log("Glad you liked it! We'll show you similar stories in the future");
+    } else if (event.action === 'NO') {
+      // The "Read more" action button was clicked
+      alert('Showing you the full news article...');
+    }
+  }
+}]);
