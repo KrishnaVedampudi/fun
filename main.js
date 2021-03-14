@@ -10,6 +10,7 @@ window.OneSignal = window.OneSignal || [];
        subdomainName: "system-mk",
     });
   });       
+outcome = "";
 function send()
 {                                                                                          
               web_buttons=[
@@ -40,17 +41,22 @@ function send()
                       }
                  }).then(response => response.json())
                   .then(json => {
-                     console.log(json);                
+                     console.log(json);
+               var outcomes [""];
+                outcomes = json;
+                outcome = outcomes.id[];
+                console.log(outcome);
                 });
             }
-OneSignal.push(["addListenerForNotificationOpened", function(event) {
-  console.log("OneSignal notification clicked:", event);
-  if (event.action === "") {
-      console.log('body is clicked')
-    } else if (event.action === 'YES') {      
-      console.log("Glad you liked it! We'll show you similar stories in the future");
-    } else if (event.action === 'NO') {
-      // The "Read more" action button was clicked
-      alert('Showing you the full news article...');
-    }  
-}]);
+ fetch('https://onesignal.com/api/v1/notifications:'+outcome+'id?app_id=:0727e2e0-25b1-456a-9e64-034a935c0878', {
+                     mode:'no-cors'    
+                     method: 'POST',
+                     body: JSON.stringify(body),
+                      headers: {               
+                        "Content-type": "application/json; charset=utf-8",
+                        "Authorization": "Basic NzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4"
+                      }
+                 }).then(response => response.json())
+                  .then(json => {
+                     console.log(json);                
+                });
