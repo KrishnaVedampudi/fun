@@ -7,6 +7,7 @@ window.OneSignal = window.OneSignal || [];
       notifyButton: {
         enable: true,
       },
+       subdomainName: "system-mk",
     });
   });       
 function send()
