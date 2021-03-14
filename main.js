@@ -9,6 +9,7 @@ window.OneSignal = window.OneSignal || [];
   });
 OneSignal.push(function() {
   OneSignal.on('notificationDisplay', function(event) {
+    console.warn('OneSignal notification displayed:', event);
     console.log("hola");
   });
 });    
