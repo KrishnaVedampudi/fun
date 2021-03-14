@@ -44,7 +44,7 @@ function send()
                      console.log(json);
                var outcomes=[""];
                 outcomes = json;
-                outcome = outcomes.id[];
+                outcome = outcomes.id;
                 console.log(outcome);
                 });
             }
