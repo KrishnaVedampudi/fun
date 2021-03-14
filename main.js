@@ -50,8 +50,7 @@ function send()
             }
  fetch('https://onesignal.com/api/v1/notifications:'+outcome+'id?app_id=:0727e2e0-25b1-456a-9e64-034a935c0878', {
                      mode:'no-cors',
-                     method: 'POST',
-                     body: JSON.stringify(body),
+                     method: 'POST',                     
                       headers: {               
                         "Content-type": "application/json; charset=utf-8",
                         "Authorization": "Basic NzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4"
