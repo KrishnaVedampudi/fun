@@ -11,8 +11,7 @@ window.OneSignal = window.OneSignal || [];
   });
 function isPushNotificationsEnabledVerbose() {
     console.log('isPushNotificationsEnabledVerbose()');
-    Promise.all([
-            OneSignal.isPushNotificationsEnabled(),
+    Promise.all([            
             OneSignal.getUserId(),
             OneSignal.getRegistrationId(),
             OneSignal.getNotificationPermission(),
