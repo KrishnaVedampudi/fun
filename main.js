@@ -46,7 +46,11 @@ function send()
                 outcomes = json;
                 outcome = outcomes.id;
                 console.log(outcome);
-                 fetch('https://onesignal.com/api/v1/notifications/'+outcome+'?app_id=0727e2e0-25b1-456a-9e64-034a935c0878', {
+                xxx();
+                 });}
+function xxx()
+{
+  fetch('https://onesignal.com/api/v1/notifications/'+outcome+'?app_id=0727e2e0-25b1-456a-9e64-034a935c0878', {
                      mode:'no-cors',     
                      method: 'POST',                     
                       headers: {               
@@ -59,5 +63,6 @@ function send()
                    }).then(response => response.json())
                    .then(json => {
                      console.log(json);                
-                });});}
+                });
+}
            
