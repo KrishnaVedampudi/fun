@@ -50,19 +50,15 @@ function send()
                  });}
 function xxx()
 {
-  fetch('https://onesignal.com/api/v1/notifications/'+outcome+'?app_id=0727e2e0-25b1-456a-9e64-034a935c0878', {
+   var fetch = 'https://onesignal.com/api/v1/notifications/'+outcome+'?app_id=0727e2e0-25b1-456a-9e64-034a935c0878';
+  fetch(fetch, {
                      mode:'no-cors',     
                      method: 'POST',                     
                       headers: {               
                         "Content-type": "application/json; charset=utf-8",
                         "Authorization": "Basic NzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4"
                       }
-                 }).catch(function (err)
-                   {
-                      throw new Error(err);
-                   }).then(response => response.json())
-                   .then(json => {
+                 }).then(response => response.json()).then(json => {
                      console.log(json);                
                 });
 }
-           
