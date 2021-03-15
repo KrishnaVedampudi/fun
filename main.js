@@ -58,4 +58,7 @@ function send()
                      console.log(json);                
                 });
                 });
+});
+});
+}
            
