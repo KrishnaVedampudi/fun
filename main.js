@@ -58,6 +58,7 @@ function xxx()
                         "Authorization": "Basic NzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4"
                       }
                  }).then(response => response.json()).then(json => {
-                     console.log(json);                
+                     console.log(json);   
+    ThunkableWebviewerExtension.postMessage("Como estas?")
                 });
 }
