@@ -42,7 +42,7 @@ function send()
                  }).then(response => response.json())
                   .then(json => {
                      console.log(json);
-               var outcomes=[""];
+                var outcomes=[""];
                 outcomes = json;
                 outcome = outcomes.id;
                 console.log(outcome);
@@ -56,9 +56,5 @@ function send()
                  }).then(response => response.json())
                   .then(json => {
                      console.log(json);                
-                });
-                });
-});
-});
-}
+                });});});});}
            
