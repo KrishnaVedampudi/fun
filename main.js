@@ -50,8 +50,8 @@ function send()
                  });}
 function xxx()
 {
-   var fetch = 'https://onesignal.com/api/v1/notifications/'+outcome+'?app_id=0727e2e0-25b1-456a-9e64-034a935c0878';
-  fetch(fetch, {
+   y444 = 'https://onesignal.com/api/v1/notifications/'+outcome+'?app_id=0727e2e0-25b1-456a-9e64-034a935c0878';
+  fetch(y444, {
                      mode:'no-cors',     
                      method: 'POST',                     
                       headers: {               
