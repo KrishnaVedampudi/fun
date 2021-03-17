@@ -60,9 +60,11 @@ function view_notification()
                         "Content-type": "application/json; charset=utf-8",
                         "Authorization": "Basic NzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4"
                       }
-                 }).then(response => response.json())
-                  .then(json => {
-                     console.log(json);   
-                     ThunkableWebviewerExtension.postMessage("Como estas?");
+                 }).then(
+                      response => response.json()
+                   ).then(
+                       json => {
+                       console.log(json);   
+                       ThunkableWebviewerExtension.postMessage("Como estas?");
                     });
 }
