@@ -46,12 +46,12 @@ function send()
                 outcomes = json;
                 outcome = outcomes.id;
                 console.log(outcome);
-                setTimeout(
-            function(){
-                xxx();
-            },6000);                
+                setTimeout(function()
+                {
+                  view_notification();
+                },6000);                
                  });}
-function xxx()
+function view_notification()
 {  
   fetch("https://onesignal.com/api/v1/notifications/"+outcome+"?app_id=0727e2e0-25b1-456a-9e64-034a935c0878&outcome_names=os__click.count&outcome_platforms=0", {
                      mode:'no-cors',     
@@ -60,8 +60,9 @@ function xxx()
                         "Content-type": "application/json; charset=utf-8",
                         "Authorization": "Basic NzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4"
                       }
-                 }).then(response => response.json()).then(json => {
+                 }).then(response => response.json())
+                  .then(json => {
                      console.log(json);   
-    ThunkableWebviewerExtension.postMessage("Como estas?")
-                });
+                     ThunkableWebviewerExtension.postMessage("Como estas?");
+                    });
 }
