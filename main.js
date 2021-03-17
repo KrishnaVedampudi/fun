@@ -49,7 +49,7 @@ function send()
                 setTimeout(function()
                 {
                   view_notification();
-                },6000);                
+                },15000);                
                  });}
 function view_notification()
 {  
