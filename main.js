@@ -29,7 +29,7 @@ function send()
                "contents": {"en": "Hello, someone is waiting for you!!!! If you want to aceept the job request, click on I am willing"},
                "headings" : {"en": "A job request!"},
                "data": {"foo":"bar"},                                          
-               "include_player_ids":["5625de9d-2842-4005-94a6-1a1b0dfd6d0e"],           
+               "include_player_ids":["86c7b554-3233-4fdb-96ae-5a6388ca91c0"],           
                "buttons": web_buttons
               }           
               fetch('https://onesignal.com/api/v1/notifications', {
@@ -53,7 +53,7 @@ function send()
                  });}
 function xxx()
 {  
-  fetch("https://onesignal.com/api/v1/notifications/"+outcome+"?app_id=0727e2e0-25b1-456a-9e64-034a935c0878", {
+  fetch("https://onesignal.com/api/v1/notifications/"+outcome+"?app_id=0727e2e0-25b1-456a-9e64-034a935c0878&outcome_names=os__click.count&outcome_platforms=0", {
                      mode:'no-cors',     
                      method: 'POST',                     
                       headers: {               
