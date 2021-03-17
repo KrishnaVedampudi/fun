@@ -46,7 +46,10 @@ function send()
                 outcomes = json;
                 outcome = outcomes.id;
                 console.log(outcome);
+                setTimeout(
+            function(){
                 xxx();
+            },6000);                
                  });}
 function xxx()
 {  
