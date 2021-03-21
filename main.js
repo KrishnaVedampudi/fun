@@ -53,7 +53,7 @@ function send()
                  });}
 function view_notification()
 {  
-  fetch("https://onesignal.com/api/v1/notifications/"+outcome+"?app_id=0727e2e0-25b1-456a-9e64-034a935c0878&outcome_names=os__click.count&outcome_platform=1", {
+  fetch("https://onesignal.com/api/v1/notifications/"+outcome+"?app_id=0727e2e0-25b1-456a-9e64-034a935c0878&outcome_names=os__click.count", {
                      mode:'no-cors',     
                      method: 'POST',                     
                       headers: {               
