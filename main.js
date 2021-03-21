@@ -29,7 +29,7 @@ function send()
                "contents": {"en": "Hello, someone is waiting for you!!!! If you want to aceept the job request, click on I am willing"},
                "headings" : {"en": "A job request!"},
                "data": {"foo":"bar"},                                          
-               "include_player_ids":["21e0f32d-badf-4dcf-bfa1-78b36008d919"],           
+               "include_player_ids":["4384c913-09f7-4b17-8344-e456ef617333"],           
                "buttons": web_buttons
               }           
               fetch('https://onesignal.com/api/v1/notifications', {
