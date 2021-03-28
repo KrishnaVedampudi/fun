@@ -32,8 +32,7 @@ function send()
                "data": {"foo":"bar"},                                          
                "include_player_ids":["4384c913-09f7-4b17-8344-e456ef617333"],           
                "buttons": web_buttons
-              }]      
-              OneSignal.push(["addListenerForNotificationOpened", function(data) {
+              }]                    
                 fetch('https://onesignal.com/api/v1/notifications', {
                      method: 'POST',
                      body: JSON.stringify(body),
@@ -43,9 +42,9 @@ function send()
                       }
                  }).then(response => response.json())
                   .then(json => {
-                     console.log(json);                                                              
-                 });
-    console.log("Received NotificationOpened:");
-    console.log(data);
-}]);
+                  OneSignal.push(["addListenerForNotificationOpened", function(data) {                   
+                    console.log("Received NotificationOpened:");
+                    console.log(data);
+              }]);
+         });   
   }
