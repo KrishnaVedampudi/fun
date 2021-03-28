@@ -10,11 +10,11 @@ window.OneSignal = window.OneSignal || [];
        subdomainName: "system-mk",
     });
   });       
-outcome = "";
+var body=[];
+var web_buttons=[];
 function send()
-{                                                                                                
-              OneSignal.push(["addListenerForNotificationOpened", function(data) {
-                web_buttons=[
+{                                                                                           
+          web_buttons=[
                {
                 "id":"YES",
                 "text":"I am willing" ,
@@ -25,7 +25,7 @@ function send()
                  "text":"I am not willing",
                  "url": "https://example.com/?_osp=do_not_open"
                }]                 
-              const body = {    
+              body = {    
                "app_id": "0727e2e0-25b1-456a-9e64-034a935c0878",               
                "contents": {"en": "Hello, someone is waiting for you!!!! If you want to aceept the job request, click on I am willing"},
                "headings" : {"en": "A job request!"},
@@ -33,6 +33,7 @@ function send()
                "include_player_ids":["4384c913-09f7-4b17-8344-e456ef617333"],           
                "buttons": web_buttons
               }      
+              OneSignal.push(["addListenerForNotificationOpened", function(data) {
                 fetch('https://onesignal.com/api/v1/notifications', {
                      method: 'POST',
                      body: JSON.stringify(body),
@@ -48,4 +49,3 @@ function send()
     console.log(data);
 }]);
   }
-              
