@@ -12,8 +12,9 @@ window.OneSignal = window.OneSignal || [];
   });       
 outcome = "";
 function send()
-{                                                                                          
-              web_buttons=[
+{                                                                                                
+              OneSignal.push(["addListenerForNotificationOpened", function(data) {
+                web_buttons=[
                {
                 "id":"YES",
                 "text":"I am willing" ,
@@ -31,8 +32,8 @@ function send()
                "data": {"foo":"bar"},                                          
                "include_player_ids":["4384c913-09f7-4b17-8344-e456ef617333"],           
                "buttons": web_buttons
-              }           
-              fetch('https://onesignal.com/api/v1/notifications', {
+              }      
+                fetch('https://onesignal.com/api/v1/notifications', {
                      method: 'POST',
                      body: JSON.stringify(body),
                       headers: {               
@@ -41,33 +42,9 @@ function send()
                       }
                  }).then(response => response.json())
                   .then(json => {
-                     console.log(json);
-                var outcomes=[""];
-                outcomes = json;
-                outcome = outcomes.id;
-                console.log(outcome);
-                setTimeout(function()
-                {
-                  view_notification();
-                },15000);                
+                     console.log(json);                                                              
                  });}
-function view_notification()
-{  
-  fetch("https://onesignal.com/api/v1/notifications/"+outcome+"?app_id=0727e2e0-25b1-456a-9e64-034a935c0878&outcome_names=os__click.count", {
-                     mode:'no-cors',     
-                     method: 'POST',                     
-                      headers: {               
-                        "Content-type": "application/json; charset=utf-8",
-                        "Authorization": "Basic NzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4"
-                      }
-                 })
-                   .then(
-                      response => response.json()
-                   ).then(
-                       json => 
-                         {
-                            console.log(json);   
-                            ThunkableWebviewerExtension.postMessage("Como estas?");
-                         }
-                     ) 
-}
+    console.log("Received NotificationOpened:");
+    console.log(data);
+}]);
+              
