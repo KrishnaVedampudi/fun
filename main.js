@@ -41,9 +41,15 @@ function send()
                       }
                  }).then(response => response.json())
                   .then(json => {
-                  OneSignal.push(["addListenerForNotificationOpened", function(data) {                   
-                    console.log("Received NotificationOpened:");
-                    console.log(data);
+                  console.log(json);
+                  OneSignal.push(["addListenerForNotificationOpened", function(event) {                   
+                   if (event.action === "") {     
+                     console.log("Aipai")
+                  } else if (event.action === 'YES') {                  
+                   alert("Glad you liked it! We'll show you similar stories in the future");
+                   } else if (event.action === 'NO') {      
+                   alert('Showing you the full news article...');
+                   }
               }]);
          });   
   }
