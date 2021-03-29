@@ -44,13 +44,13 @@ function send()
                   console.log(json);                 
          });   
   }
- OneSignal.push(["addListenerForNotificationOpened", function(event, action) {  
+ OneSignal.push(["addListenerForNotificationOpened", function(event) {  
                     console.log(event);
                    if (event.action === "") {     
                      console.log("Aipai")
                   } else if (event.action === 'YES') {                  
-                   alert("Glad you liked it! We'll show you similar stories in the future");
+                   console.log("Glad you liked it! We'll show you similar stories in the future");
                    } else if (event.action === 'NO') {      
-                   alert('Showing you the full news article...');
+                   console.log('Showing you the full news article...');
                    }
               }]);
