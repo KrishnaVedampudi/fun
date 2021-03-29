@@ -41,8 +41,10 @@ function send()
                       }
                  }).then(response => response.json())
                   .then(json => {
-                  console.log(json);
-                  OneSignal.push(["addListenerForNotificationOpened", function(action) {  
+                  console.log(json);                 
+         });   
+  }
+ OneSignal.push(["addListenerForNotificationOpened", function(action) {  
                     console.log(action);
                    if (action === "") {     
                      console.log("Aipai")
@@ -52,5 +54,3 @@ function send()
                    alert('Showing you the full news article...');
                    }
               }]);
-         });   
-  }
