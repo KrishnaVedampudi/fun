@@ -47,9 +47,9 @@ function send()
   }
 function listener()
 {
-   OneSignal.push(["addListenerForNotificationOpened", function(event, id) {  
+   OneSignal.push(["addListenerForNotificationOpened", function(action, id) {  
                     console.log(id);
-                    console.log(event);
+                    console.log(action);
                    if (event.action === "") {     
                      console.log("Aipai")
                   } else if (event.action === 'YES') {                  
