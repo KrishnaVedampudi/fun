@@ -42,7 +42,7 @@ function send()
            }).then(response => response.json())
             .then(json => {
             console.log(json);
-            if (json != null)
+            if(json != null)
             {
               fetch();
             }
