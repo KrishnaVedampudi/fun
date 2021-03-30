@@ -47,7 +47,7 @@ function send()
                mode: 'no-cors',
                 headers: {               
                   "Content-type": "application/json; charset=utf-8",
-                  "Authorization": "Basic NzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4"
+                  "Authorization": "Basic \u003cNzJjNTg0NzUtMzU2Zi00OTExLTgzMTktZmJjM2Y5NDQ5Y2E4\u003e"
                 }
            }).then(response => response.json())
             .then(json => {
