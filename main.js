@@ -42,7 +42,7 @@ function send()
            }).then(response => response.json())
             .then(json => {
             console.log(json);
-            var id = json.id[];
+            var id = json.id;
             if(id != null)
             {
               fetch();
