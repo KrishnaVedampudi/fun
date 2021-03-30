@@ -42,12 +42,7 @@ function send()
                  }).then(response => response.json())
                   .then(json => {
                   console.log(json); 
-                  listener();
-         });   
-  }
-function listener()
-{
-   OneSignal.push(["addListenerForNotificationOpened", function(action, id) {  
+                  OneSignal.push(["addListenerForNotificationOpened", function(action, id) {  
                     console.log(id);
                     console.log(action);
                    if (event.action === "") {     
@@ -57,5 +52,9 @@ function listener()
                    } else if (event.action === 'NO') {      
                    console.log('Showing you the full news article...');
                    }
-              }]);
-}
+   }]);
+         });   
+  }
+
+   
+
