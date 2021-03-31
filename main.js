@@ -1,5 +1,3 @@
-
-
 window.OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
     OneSignal.init({
@@ -42,6 +40,7 @@ function send()
            }).then(response => response.json())
             .then(json => {           
             console.log(json);
+            fetch();
           });
      }
 function fetch()
@@ -57,6 +56,4 @@ function fetch()
             .then(json => {
             console.log(json);
              });
-}
-fetch();
- 
+} 
